@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { useTitle } from '../hooks/useTitle';
 import { motion } from 'framer-motion';
 import { Target, Eye, Award, Users, Printer, Shield, Truck, Zap } from 'lucide-react';
-import { teamMembers } from '../data/products';
+// import { teamMembers } from '../data/products';
+
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },

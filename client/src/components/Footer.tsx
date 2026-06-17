@@ -59,7 +59,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-slate-400">
                 <Phone className="w-4 h-4 mt-0.5 text-accent-400" />
-                <span>+91 98765 43210</span>
+                <span>+91 9468006213</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-slate-400">
                 <Mail className="w-4 h-4 mt-0.5 text-accent-400" />
@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-slate-400">
                 <MapPin className="w-4 h-4 mt-0.5 text-accent-400" />
-                <span>123 Print Street, Industrial Area, City - 400001</span>
+                <span>Kund Haryana 123102, India</span>
               </li>
             </ul>
           </div>
