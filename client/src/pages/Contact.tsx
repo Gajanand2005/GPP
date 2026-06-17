@@ -25,6 +25,15 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const whatsappMessage = `Hello, my name is ${formData.name}.
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+Message: ${formData.message}`;
+    const whatsappUrl = `https://wa.me/7056779631?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     setTimeout(() => setSubmitted(false), 5000);
@@ -80,8 +89,8 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Phone</h3>
-                    <p className="text-slate-600 dark:text-slate-300">+91 98765 43210</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">+91 98765 43211</p>
+                    <p className="text-slate-600 dark:text-slate-300">+91 9468006213</p>
+                   
                   </div>
                 </div>
 
@@ -91,8 +100,8 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
-                    <p className="text-slate-600 dark:text-slate-300">info@gppprinting.com</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">orders@gppprinting.com</p>
+                    <p className="text-slate-600 dark:text-slate-300">orders@gppprinting.com</p>
+                    
                   </div>
                 </div>
 
@@ -102,8 +111,8 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Address</h3>
-                    <p className="text-slate-600 dark:text-slate-300">123 Print Street</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Industrial Area, City - 400001</p>
+                    <p className="text-slate-600 dark:text-slate-300">GPP Gagan Printing press </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Kund Haryana 123102</p>
                   </div>
                 </div>
 
@@ -114,13 +123,13 @@ export function Contact() {
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Working Hours</h3>
                     <p className="text-slate-600 dark:text-slate-300">Monday - Saturday</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">9:00 AM - 7:00 PM</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">24 hours</p>
                   </div>
                 </div>
               </div>
 
               <a
-                href="https://wa.me/919876543210?text=Hi, I would like to inquire about your printing services."
+                href="https://wa.me/7056779631?text=Hi, I would like to inquire about your printing services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors"
@@ -141,6 +150,7 @@ export function Contact() {
             >
               <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
                 Send Us a <span className="text-primary-700 dark:text-accent-400">Message</span>
+                
               </h2>
 
               {submitted && (
@@ -191,7 +201,7 @@ export function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-accent-500"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 9468006213"
                     />
                   </div>
                   <div>
@@ -230,6 +240,7 @@ export function Contact() {
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-800 dark:bg-accent-500 text-white dark:text-slate-900 rounded-lg font-medium hover:bg-primary-700 dark:hover:bg-accent-400 transition-colors"
                 >
+                  
                   <Send className="w-4 h-4" />
                   Send Message
                 </button>
@@ -251,7 +262,7 @@ export function Contact() {
             className="rounded-xl overflow-hidden shadow-lg"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.1160984907!2d72.7410995!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d905809.3699774625!2d75.44121364676852!3d27.521582642626566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912a969ce7a74a5%3A0xaec652b7692bf221!2sGagan%20Printing%20Press!5e0!3m2!1sen!2sin!4v1781703461443!5m2!1sen!2sin"
               width="100%"
               height="450"
               style={{ border: 0 }}

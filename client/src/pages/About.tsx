@@ -230,38 +230,7 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-              Meet Our <span className="text-primary-700 dark:text-accent-400">Team</span>
-            </h2>
-            <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              The dedicated professionals behind every print we produce.
-            </p>
           </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeIn}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="font-semibold text-slate-900 dark:text-white">{member.name}</h3>
-                  <p className="text-sm text-primary-700 dark:text-accent-400 font-medium mb-2">{member.role}</p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{member.bio}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
     </div>
