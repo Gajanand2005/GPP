@@ -40,7 +40,7 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              {['Visiting Cards', 'Flex Banners', 'Wedding Cards', 'Brochures', 'Stickers'].map((label) => (
+              {['Visiting Cards', 'Flex Banners', 'Wedding Cards', 'Stamp', 'ID Card Strap','ID Card','Bill Books'].map((label) => (
                 <li key={label}>
                   <Link
                     to="/services"
@@ -63,7 +63,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2 text-sm text-slate-400">
                 <Mail className="w-4 h-4 mt-0.5 text-accent-400" />
-                <span>info@gppprinting.com</span>
+                <span>gaganprintingpress1985@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-slate-400">
                 <MapPin className="w-4 h-4 mt-0.5 text-accent-400" />

@@ -3,7 +3,7 @@ import { useTitle } from '../hooks/useTitle';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ChevronLeft, ChevronRight, MessageCircle, Minus, Plus, Check } from 'lucide-react';
-import { products } from '../data/products';
+import { products, resolveImageUrl } from '../data/products';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -63,7 +63,7 @@ export function ProductDetails() {
 
   const handleWhatsAppInquiry = () => {
     const message = `Hi GPP Printing Press!\n\nI'm interested in ordering:\n\nProduct: ${product.name}\nCategory: ${product.category}\nMaterial: ${product.materials[selectedMaterial]}\nSize: ${product.sizes[selectedSize]}\nQuantity: ${quantity}\n\nPlease provide a quote. Thank you!`;
-    const url = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/9468006213?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     setInquirySent(true);
   };
@@ -102,7 +102,7 @@ export function ProductDetails() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  src={product.images[activeImage]}
+                  src={resolveImageUrl(product.images[activeImage])}
                   alt={product.name}
                   className="w-full h-[400px] lg:h-[500px] object-cover"
                 />
@@ -137,7 +137,7 @@ export function ProductDetails() {
                     }`}
                   >
                     <img
-                      src={img}
+                      src={resolveImageUrl(img)}
                       alt={`${product.name} ${i + 1}`}
                       className="w-full h-20 object-cover"
                     />

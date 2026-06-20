@@ -31,7 +31,7 @@ Email: ${formData.email}
 Phone: ${formData.phone}
 Subject: ${formData.subject}
 Message: ${formData.message}`;
-    const whatsappUrl = `https://wa.me/7056779631?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/9468006213?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
@@ -100,7 +100,7 @@ Message: ${formData.message}`;
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
-                    <p className="text-slate-600 dark:text-slate-300">orders@gppprinting.com</p>
+                    <p className="text-slate-600 dark:text-slate-300">gaganprintingpress1985@gmail.com</p>
                     
                   </div>
                 </div>
@@ -129,7 +129,7 @@ Message: ${formData.message}`;
               </div>
 
               <a
-                href="https://wa.me/7056779631?text=Hi, I would like to inquire about your printing services."
+                href="https://wa.me/9468006213?text=Hi, I would like to inquire about your printing services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors"

@@ -1,10 +1,21 @@
-import { useEffect } from 'react';
-import { useTitle } from '../hooks/useTitle';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Star, Printer, Palette, Truck, CheckCircle, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
-import { products, testimonials } from '../data/products';
-import { WhatsAppButton } from '../components/WhatsAppButton';
+import { useEffect } from "react";
+import { useTitle } from "../hooks/useTitle";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Star,
+  Printer,
+  Palette,
+  Truck,
+  CheckCircle,
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
+import { products, testimonials, resolveImageUrl } from "../data/products";
+import { WhatsAppButton } from "../components/WhatsAppButton";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -12,7 +23,7 @@ const fadeIn = {
 };
 
 export function Home() {
-  useTitle('Home');
+  useTitle("Home");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -37,11 +48,15 @@ export function Home() {
                 Premium Printing Solutions
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-                Bringing Your Ideas to{' '}
-                <span className="text-primary-700 dark:text-accent-400">Life</span>
+                Bringing Your Ideas to{" "}
+                <span className="text-primary-700 dark:text-accent-400">
+                  Life
+                </span>
               </h1>
               <p className="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
-                GPP Printing Press delivers premium quality printing services for businesses and individuals. From visiting cards to flex banners, we print it all with precision.
+                GPP Printing Press delivers premium quality printing services
+                for businesses and individuals. From visiting cards to flex
+                banners, we print it all with precision.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
@@ -80,11 +95,18 @@ export function Home() {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Printing press"
+                <video
+                  src="/logo.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  
                   className="w-full h-[400px] lg:h-[500px] object-cover"
-                />
+                >
+                  <source src="/logo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 rounded-xl shadow-xl p-4 flex items-center gap-3">
@@ -92,8 +114,12 @@ export function Home() {
                   <Star className="w-5 h-5 text-accent-500" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900 dark:text-white">4.9/5 Rating</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Based on 500+ reviews</p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                    4.9/5 Rating
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Based on 500+ reviews
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -115,22 +141,22 @@ export function Home() {
             >
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://images.pexels.com/photos/3747463/pexels-photo-3747463.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="/card.jpg"
                   alt="Printing equipment"
                   className="rounded-xl shadow-lg w-full h-48 object-cover"
                 />
                 <img
-                  src="https://images.pexels.com/photos/4491451/pexels-photo-4491451.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="pam1.jpg"
                   alt="Business cards"
                   className="rounded-xl shadow-lg w-full h-48 object-cover mt-8"
                 />
                 <img
-                  src="https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="stmap2.jpg"
                   alt="Banner printing"
                   className="rounded-xl shadow-lg w-full h-48 object-cover -mt-8"
                 />
                 <img
-                  src="https://images.pexels.com/photos/1661905/pexels-photo-1661905.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="visting.jpg"
                   alt="Wedding cards"
                   className="rounded-xl shadow-lg w-full h-48 object-cover"
                 />
@@ -144,35 +170,56 @@ export function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                Your Trusted Partner in <span className="text-primary-700 dark:text-accent-400">Printing</span>
+                Your Trusted Partner in{" "}
+                <span className="text-primary-700 dark:text-accent-400">
+                  Printing
+                </span>
               </h2>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Founded in 2005, GPP Printing Press has grown from a small local printer to a full-service printing company serving businesses across the region. We combine cutting-edge technology with skilled craftsmanship to deliver exceptional results.
+                Founded in 2005, GPP Printing Press has grown from a small local
+                printer to a full-service printing company serving businesses
+                across the region. We combine cutting-edge technology with
+                skilled craftsmanship to deliver exceptional results.
               </p>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-                Our state-of-the-art facility houses the latest printing equipment, ensuring vibrant colors, sharp details, and consistent quality across every print job — whether it is a single business card or a thousand flyers.
+                Our state-of-the-art facility houses the latest printing
+                equipment, ensuring vibrant colors, sharp details, and
+                consistent quality across every print job — whether it is a
+                single business card or a thousand flyers.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary-50 dark:bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Printer className="w-6 h-6 text-primary-700 dark:text-accent-400" />
                   </div>
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white">20K+</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Prints Delivered</p>
+                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                    20K+
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Prints Delivered
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary-50 dark:bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Palette className="w-6 h-6 text-primary-700 dark:text-accent-400" />
                   </div>
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white">50+</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Design Options</p>
+                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                    50+
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Design Options
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-primary-50 dark:bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Truck className="w-6 h-6 text-primary-700 dark:text-accent-400" />
                   </div>
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white">24h</p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Express Delivery</p>
+                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                    24h
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Express Delivery
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -192,10 +239,14 @@ export function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-              Featured <span className="text-primary-700 dark:text-accent-400">Products</span>
+              Featured{" "}
+              <span className="text-primary-700 dark:text-accent-400">
+                Products
+              </span>
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Explore our most popular printing products, crafted with premium materials and precision.
+              Explore our most popular printing products, crafted with premium
+              materials and precision.
             </p>
           </motion.div>
 
@@ -215,7 +266,7 @@ export function Home() {
                 >
                   <div className="relative overflow-hidden">
                     <img
-                      src={product.images[0]}
+                      src={resolveImageUrl(product.images[0])}
                       alt={product.name}
                       className="w-full h-48 object-cover transition-transform group-hover:scale-105"
                     />
@@ -227,7 +278,9 @@ export function Home() {
                     <h3 className="font-semibold text-slate-900 dark:text-white group-hover:text-primary-700 dark:group-hover:text-accent-400 transition-colors">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{product.priceRange}</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                      {product.priceRange}
+                    </p>
                   </div>
                 </Link>
               </motion.div>
@@ -258,10 +311,15 @@ export function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-              What Our <span className="text-primary-700 dark:text-accent-400">Clients</span> Say
+              What Our{" "}
+              <span className="text-primary-700 dark:text-accent-400">
+                Clients
+              </span>{" "}
+              Say
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Hear from businesses and individuals who trust GPP Printing Press for their printing needs.
+              Hear from businesses and individuals who trust GPP Printing Press
+              for their printing needs.
             </p>
           </motion.div>
 
@@ -278,7 +336,10 @@ export function Home() {
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    <Star
+                      key={i}
+                      className="w-4 h-4 text-amber-400 fill-amber-400"
+                    />
                   ))}
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
@@ -291,7 +352,9 @@ export function Home() {
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                      {testimonial.name}
+                    </p>
                     <p className="text-xs text-slate-500 dark:text-slate-400">
                       {testimonial.role}, {testimonial.company}
                     </p>
@@ -318,10 +381,11 @@ export function Home() {
               Ready to Get Started?
             </h2>
             <p className="text-primary-100 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-              Have a printing project in mind? Chat with us on WhatsApp and get a quick quote for your order.
+              Have a printing project in mind? Chat with us on WhatsApp and get
+              a quick quote for your order.
             </p>
             <a
-              href="https://wa.me/919876543210?text=Hi, I would like to inquire about your printing services."
+              href="https://wa.me/9468006213?text=Hi, I would like to inquire about your printing services."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors"
@@ -345,10 +409,14 @@ export function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-              Get in <span className="text-primary-700 dark:text-accent-400">Touch</span>
+              Get in{" "}
+              <span className="text-primary-700 dark:text-accent-400">
+                Touch
+              </span>
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Visit us, call us, or send a message. We are here to help with all your printing needs.
+              Visit us, call us, or send a message. We are here to help with all
+              your printing needs.
             </p>
           </motion.div>
 
@@ -364,8 +432,12 @@ export function Home() {
               <div className="w-12 h-12 bg-primary-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-6 h-6 text-primary-700 dark:text-accent-400" />
               </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Phone</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300">+91 98765 43210</p>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
+                Phone
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300">
+                +91 9468006213
+              </p>
             </motion.div>
 
             <motion.div
@@ -379,8 +451,12 @@ export function Home() {
               <div className="w-12 h-12 bg-primary-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-6 h-6 text-primary-700 dark:text-accent-400" />
               </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Email</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300">info@gppprinting.com</p>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
+                Email
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300">
+              gaganprintingpress1985@gmail.com
+              </p>
             </motion.div>
 
             <motion.div
@@ -394,8 +470,12 @@ export function Home() {
               <div className="w-12 h-12 bg-primary-50 dark:bg-slate-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6 text-primary-700 dark:text-accent-400" />
               </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Address</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300">123 Print Street, Industrial Area, City - 400001</p>
+              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
+                Address
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-300">
+               Kund Haryana 123102, India
+              </p>
             </motion.div>
           </div>
         </div>

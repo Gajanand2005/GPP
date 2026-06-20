@@ -3,7 +3,7 @@ import { useTitle } from '../hooks/useTitle';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, Filter, Eye, ArrowRight } from 'lucide-react';
-import { products, categories } from '../data/products';
+import { products, categories, resolveImageUrl } from '../data/products';
 import type { Product } from '../types';
 
 const fadeIn = {
@@ -169,7 +169,7 @@ export function Gallery() {
                 >
                   <div className="relative overflow-hidden">
                     <img
-                      src={product.images[0]}
+                      src={resolveImageUrl(product.images[0])}
                       alt={product.name}
                       className="w-full h-56 object-cover transition-transform group-hover:scale-105"
                     />
@@ -235,7 +235,7 @@ export function Gallery() {
             >
               <div className="relative">
                 <img
-                  src={selectedProduct.images[0]}
+                  src={resolveImageUrl(selectedProduct.images[0])}
                   alt={selectedProduct.name}
                   className="w-full h-64 sm:h-80 object-cover rounded-t-2xl"
                 />
